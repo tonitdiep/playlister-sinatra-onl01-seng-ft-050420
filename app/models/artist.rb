@@ -1,7 +1,5 @@
 class Artist < ActiveRecord::Base
   has_many :songs
-  def initialize(name)
-    @name = name
-  end
+  has_many :genres, through: :songs
   
 end

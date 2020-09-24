@@ -1,6 +1,6 @@
 class SongsTable < ActiveRecord::Migration[5.2]
   def change
-    create_table do |t|
+    create_table :songs do |t|
       t.string :name
       t.integer :artist_id
     end
