@@ -3,5 +3,6 @@ class SongsTable < ActiveRecord::Migration[5.2]
     create_table do |t|
       t.string :name
       t.integer :artist_id
+    end
   end
 end
