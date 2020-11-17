@@ -1,7 +1,14 @@
 class Artist < ActiveRecord::Base
-  has_many :song_genres
-  has_many :songs, through: :song_genres
-  def initialize(name:)
-    name = @name
+
+  has_many :songs
+  has_many :genres, through: :songs
+
+  def slug
+    self.name.downcase.gsub(" ", "-")
   end
+
+  def self.find_by_slug(slug)
+    Artist.all.find {|name| slug == name.slug}
+  end
+
 end
